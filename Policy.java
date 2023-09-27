@@ -1,5 +1,5 @@
 /**
- * The Policy class represents an insurance policy with various attributes and methods.
+ * The Policy class represents an insurance policy with various attributes and methods
  */
 public class Policy {
 
@@ -49,7 +49,7 @@ public class Policy {
     // Constructors
 
     /**
-     * Constructs a new Policy object with default values for all attributes.
+     * Constructs a new Policy object with default values for all attributes
      */
     public Policy() {
         // Initialize all fields with default values
@@ -64,16 +64,16 @@ public class Policy {
     }
 
     /**
-     * Constructs a new Policy object with the provided values for all attributes.
+     * Constructs a new Policy object with the provided values for all attributes
      *
      * @param policyNumber             The policy number.
-     * @param providerName            The name of the insurance provider.
-     * @param policyholderFirstName   The first name of the policyholder.
-     * @param policyholderLastName    The last name of the policyholder.
-     * @param policyholderAge         The age of the policyholder.
-     * @param policyholderSmokingStatus The smoking status of the policyholder.
-     * @param policyholderHeightInInches The height of the policyholder in inches.
-     * @param policyholderWeightInPounds The weight of the policyholder in pounds.
+     * @param providerName            The name of the insurance provider
+     * @param policyholderFirstName   The first name of the policyholder
+     * @param policyholderLastName    The last name of the policyholder
+     * @param policyholderAge         The age of the policyholder
+     * @param policyholderSmokingStatus The smoking status of the policyholder
+     * @param policyholderHeightInInches The height of the policyholder in inches
+     * @param policyholderWeightInPounds The weight of the policyholder in pounds
      */
     public Policy(String policyNumber, String providerName, String policyholderFirstName,
                   String policyholderLastName, int policyholderAge, String policyholderSmokingStatus,
@@ -94,18 +94,18 @@ public class Policy {
     // Methods
 
     /**
-     * Calculates and returns the Body Mass Index (BMI) of the policyholder.
+     * Calculates and returns the Body Mass Index (BMI) of the policyholder
      *
-     * @return The BMI of the policyholder.
+     * @return The BMI of the policyholder
      */
     public double calculateBMI() {
         return (policyholderWeightInPounds * 703) / (policyholderHeightInInches * policyholderHeightInInches);
     }
 
     /**
-     * Calculates and returns the price of the insurance policy based on various factors.
+     * Calculates and returns the price of the insurance policy based on various factors
      *
-     * @return The price of the insurance policy.
+     * @return The price of the insurance policy
      */
     public double calculateInsurancePrice() {
         double price = BASE_FEE;
@@ -130,9 +130,9 @@ public class Policy {
     }
 
     /**
-     * Returns a string representation of the Policy object.
+     * Returns a string representation of the Policy object
      *
-     * @return A string representation of the Policy object.
+     * @return A string representation of the Policy object
      */
     @Override
     public String toString() {
