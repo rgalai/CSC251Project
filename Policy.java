@@ -79,15 +79,15 @@ public class Policy {
     @Override
     public String toString() {
         // Provide a string representation of the Policy object
-        return "Policy{" +
-                "policyNumber='" + policyNumber + '\'' +
-                ", providerName='" + providerName + '\'' +
-                ", policyholderFirstName='" + policyholderFirstName + '\'' +
-                ", policyholderLastName='" + policyholderLastName + '\'' +
-                ", policyholderAge=" + policyholderAge +
-                ", policyholderSmokingStatus='" + policyholderSmokingStatus + '\'' +
-                ", policyholderHeightInInches=" + policyholderHeightInInches +
-                ", policyholderWeightInPounds=" + policyholderWeightInPounds +
-                '}';
+        return "" +
+                "\nPolicy Number: " + policyNumber + "\n" + "\n" +
+                "Provider Name: " + providerName + "\n" + "\n" +
+                "Policyholder's FirstName: " + policyholderFirstName + "\n"  + "\n"+
+                "Policyholder's LastName: " + policyholderLastName + "\n"  + "\n"+
+                "Policyholder's Age:" + policyholderAge + "\n" + "\n" +
+                "Policyholder's Smoking Status: " + policyholderSmokingStatus + "\n" + "\n" +
+                "Policyholder's Height: " + policyholderHeightInInches + "\n" + "\n" +
+                "Policyholder's Weight: " + policyholderWeightInPounds + "\n"
+                ;
     }
 }
