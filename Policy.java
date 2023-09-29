@@ -1,5 +1,5 @@
 /**
- * The Policy class represents an insurance policy with various attributes and methods.
+ * The Policy class represents an insurance policy with various attributes and methods
  */
 public class Policy {
 
