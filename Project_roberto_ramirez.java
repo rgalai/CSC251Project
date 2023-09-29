@@ -3,13 +3,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * This class represents a program for reading policy information from a text file
- * and insurance policy cost based on provided information
+ * The Project_roberto_ramirez class represents a program for reading policy information from a text file
+ * and displaying related calculations.
  */
 public class Project_roberto_ramirez {
     /**
-     * Main method to read policy information from a text file and perform calculations
-     * @param args Command line arguments 
+     * Main method to read policy information from a text file and perform calculations.
+     * @param args Command-line arguments (not used in this program).
      */
     public static void main(String[] args) {
         // Declare variables to store policy information
