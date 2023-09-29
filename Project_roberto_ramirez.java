@@ -1,48 +1,38 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
- * The Project_roberto_ramirez class represents a program for collecting and displaying
- * policy information and related calculations.
+ * This class represents a program for reading policy information from a text file
+ * and insurance policy cost based on provided information
  */
 public class Project_roberto_ramirez {
+    /**
+     * Main method to read policy information from a text file and perform calculations
+     * @param args Command line arguments 
+     */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Declare variables to store policy information
+        String policyNumber, providerName, firstName, lastName, smokingStatus;
+        int age;
+        double heightInInches, weightInPounds;
 
-        // Ask the user to enter policy information
-        System.out.println("Enter Policy Information:");
-
-        // Input for Policy Number
-        System.out.print("\nPolicy Number: ");
-        String policyNumber = scanner.nextLine();
-
-        // Input for Provider Name
-        System.out.print("\nProvider Name: ");
-        String providerName = scanner.nextLine();
-
-        // Input for Policyholder's First Name
-        System.out.print("\nPolicyholder's First Name: ");
-        String firstName = scanner.nextLine();
-
-        // Input for Policyholder's Last Name
-        System.out.print("\nPolicyholder's Last Name: ");
-        String lastName = scanner.nextLine();
-
-        // Input for Policyholder's Age
-        System.out.print("\nPolicyholder's Age: ");
-        int age = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
-
-        // Input for Policyholder's Smoking Status
-        System.out.print("\nPolicyholder's Smoking Status (smoker/non-smoker): ");
-        String smokingStatus = scanner.nextLine();
-
-        // Input for Policyholder's Height (in inches)
-        System.out.print("\nPolicyholder's Height (in inches): ");
-        double heightInInches = scanner.nextDouble();
-
-        // Input for Policyholder's Weight (in pounds)
-        System.out.print("\nPolicyholder's Weight (in pounds): ");
-        double weightInPounds = scanner.nextDouble();
+        // Read policy information from the text file
+        try (BufferedReader reader = new BufferedReader(new FileReader("PolicyInformation.txt"))) {
+            // Read each line from the file
+            policyNumber = reader.readLine();
+            providerName = reader.readLine();
+            firstName = reader.readLine();
+            lastName = reader.readLine();
+            age = Integer.parseInt(reader.readLine());
+            smokingStatus = reader.readLine();
+            heightInInches = Double.parseDouble(reader.readLine());
+            weightInPounds = Double.parseDouble(reader.readLine());
+        } catch (IOException e) {
+            // Handle file reading errors here
+            e.printStackTrace();
+            return;
+        }
 
         // Create an instance of the Policy class using the constructor with arguments
         Policy policy = new Policy(policyNumber, providerName, firstName, lastName, age, smokingStatus,
@@ -56,7 +46,5 @@ public class Project_roberto_ramirez {
         double insurancePrice = policy.calculateInsurancePrice();
         System.out.println("BMI: " + bmi + "\n");
         System.out.println("Insurance Price: $" + insurancePrice);
-
-        scanner.close();
     }
 }
