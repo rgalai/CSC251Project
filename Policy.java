@@ -45,6 +45,9 @@ public class Policy {
 
     /** The fee per BMI unit above the threshold. */
     private static final double BMI_FEE_PER_UNIT = 20.0;
+    
+    /** Static field to keep track of the number of Policy objects created */
+    private static int numberOfPoliciesCreated = 0;
 
     // Constructors
 
@@ -61,6 +64,7 @@ public class Policy {
         policyholderSmokingStatus = "";
         policyholderHeightInInches = 0.0;
         policyholderWeightInPounds = 0.0;
+         numberOfPoliciesCreated++;
     }
 
     /**
@@ -79,6 +83,7 @@ public class Policy {
                   String policyholderLastName, int policyholderAge, String policyholderSmokingStatus,
                   double policyholderHeightInInches, double policyholderWeightInPounds) {
         // Initialize the fields with provided values
+        // Increment the count of Policy objects created
         this.policyNumber = policyNumber;
         this.providerName = providerName;
         this.policyholderFirstName = policyholderFirstName;
@@ -87,6 +92,7 @@ public class Policy {
         this.policyholderSmokingStatus = policyholderSmokingStatus;
         this.policyholderHeightInInches = policyholderHeightInInches;
         this.policyholderWeightInPounds = policyholderWeightInPounds;
+        numberOfPoliciesCreated++;
     }
 
     // Getters and Setters for all fields
@@ -148,5 +154,9 @@ public class Policy {
                 "Policyholder's Height: " + policyholderHeightInInches + "\n" + "\n" +
                 "Policyholder's Weight: " + policyholderWeightInPounds + "\n"
                 ;
+    }
+    
+        public static int getNumberOfPoliciesCreated() {
+        return numberOfPoliciesCreated;
     }
 }
